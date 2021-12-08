@@ -14,6 +14,15 @@ spring:
     username: seek
     password: seek7235
   security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 176952102208-tfj76e0vf3bgb0eavdg49301g9spcjsa.apps.googleusercontent.com
+            client-secret: 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
+            scope:
+            - email
+            - profile
     user:
       password: 7235
     

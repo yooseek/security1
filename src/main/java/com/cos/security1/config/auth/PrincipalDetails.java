@@ -3,6 +3,7 @@ package com.cos.security1.config.auth;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ import com.cos.security1.model.User;
 // User오브젝트 타입 => UserDetail 타입 객체
 
 // Security Session => Authentication => UserDetails
+@Data
 public class PrincipalDetails implements UserDetails{
 
 	private User user;

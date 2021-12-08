@@ -21,6 +21,9 @@ public class User {
 	private String password;
 	private String email;
 	private String role; //Enum을 쓰는게 좋다. // Admin,User,Manager
+
+	private String provider;	// 어디서 정보 제공 받았는지 ex) google
+	private String providerId;	// 제공받은 곳의 아이디가 먼지 ex) google 고유번호
 	@CreationTimestamp //시간이 자동입력
 	private Timestamp createDate;	
 }
