@@ -23,6 +23,7 @@ spring:
             scope:
             - email
             - profile
+
     user:
       password: 7235
     

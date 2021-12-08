@@ -24,7 +24,8 @@ public class PrincipalDetailsService implements UserDetailsService{
 		User userEntity = userRepository.findByUsername(username);
 		if(userEntity != null) {
 			return new PrincipalDetails(userEntity);
-			//리턴 될 때 자동으로 시큐리티 Session(내부 Authentication(내부 UserDetails)로 들어간다.
+			//리턴 될 때(함수가 끝날 때) 자동으로 시큐리티 Session(내부 Authentication(내부 UserDetails)로 들어간다.
+			// @AuthenticationPrincipal 어노테이션이 만들어진다.
 		}
 		return null;
 	}

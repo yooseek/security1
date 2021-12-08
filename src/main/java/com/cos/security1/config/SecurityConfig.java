@@ -20,11 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private PrincipalOath2UserService principalOath2UserService;
 
-	@Bean // 해당 메서드의 리턴오브젝트를 IOC 등록
-	public BCryptPasswordEncoder encodePWD() {
-		return new BCryptPasswordEncoder();
-	}
-	
+
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
