@@ -3,6 +3,7 @@ package com.cos.security1.config.oauth;
 import com.cos.security1.config.auth.PrincipalDetails;
 import com.cos.security1.config.auth.provider.FacebookUserInfo;
 import com.cos.security1.config.auth.provider.GoogleUserInfo;
+import com.cos.security1.config.auth.provider.NaverUserInfo;
 import com.cos.security1.config.auth.provider.OAuth2UserInfo;
 import com.cos.security1.model.User;
 import com.cos.security1.repository.UserRepository;
@@ -13,6 +14,9 @@ import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
+
+import java.util.Map;
+
 // 구글로그인버튼 클릭 -> 구글로그인창 -> 로그인을 완료 -> code를 리턴(Oath-Client라이브러리) -> AccessToken 요청
 // userRequest정보 -> loadUser 함수 호출 -> 회원프로필
 @Service
@@ -37,6 +41,8 @@ public class PrincipalOath2UserService extends DefaultOAuth2UserService {
             oAuth2UserInfo = new GoogleUserInfo(oAuth2User.getAttributes());
         }else if (userRequest.getClientRegistration().getRegistrationId().equals("facebook")){
             oAuth2UserInfo = new FacebookUserInfo(oAuth2User.getAttributes());
+        }else if (userRequest.getClientRegistration().getRegistrationId().equals("naver")){
+            oAuth2UserInfo = new NaverUserInfo((Map<String, Object>) oAuth2User.getAttributes().get("response"));
         }
         //System.out.println("getAttributes: "+ super.loadUser(userRequest).getAttributes());
 
