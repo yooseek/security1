@@ -18,14 +18,14 @@ spring:
       client:
         registration:
           google:
-            client-id: 176952102208-tfj76e0vf3bgb0eavdg49301g9spcjsa.apps.googleusercontent.com
-            client-secret: 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
+            client-id: {}
+            client-secret: {}
             scope:
             - email
             - profile
           naver:
-            client-id: FyppK8bV3qyHm4n4E_sE
-            client-secret: Zx_Tg09avl
+            client-id: {}
+            client-secret: {}
             scope:
             - name
             - email
